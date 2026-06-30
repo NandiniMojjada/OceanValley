@@ -1,0 +1,24 @@
+<section id="process" class="py-24 sm:py-32 bg-forest-deep text-cream">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <p class="text-xs tracking-[0.4em] uppercase text-gold mb-4">Our Process</p>
+      <h2 class="font-display text-4xl sm:text-5xl">From first conversation to lasting landscape.</h2>
+    </div>
+    <div class="relative">
+      <div class="hidden lg:block absolute top-8 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent"></div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+        @for (step of steps; track step.label; let i = $index) {
+          <div class="relative text-center">
+            <div class="relative mx-auto w-16 h-16 rounded-full glass-dark flex items-center justify-center mb-5">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path [attr.d]="step.svgPath"/>
+              </svg>
+            </div>
+            <div class="font-display text-xs tracking-[0.3em] text-gold mb-2">0{{ i + 1 }}</div>
+            <h3 class="font-display text-lg">{{ step.label }}</h3>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

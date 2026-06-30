@@ -1,0 +1,171 @@
+<section class="py-24 sm:py-32 bg-cream">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+    <div class="hairline w-24 mx-auto mb-8"></div>
+    <p class="text-xs tracking-[0.4em] uppercase text-forest mb-6">Our Mission</p>
+    <h2 class="font-display text-3xl sm:text-4xl text-forest-deep leading-relaxed max-w-4xl mx-auto">
+      “Our commitment is to be one of the leading companies in the field of landscaping and gardening, providing
+      state-of-the-art services to our customers across the UAE, round the clock.”
+    </h2>
+
+    <div class="mt-16 grid sm:grid-cols-2 gap-12 text-left max-w-4xl mx-auto">
+      <div>
+        <h3 class="font-display text-2xl text-forest-deep mb-4">Key Partners</h3>
+        <p class="text-muted-foreground leading-relaxed mb-6">
+          We proudly partner with leading developers and hospitality brands across the region:
+        </p>
+        <div class="relative w-full overflow-hidden py-2">
+          <div class="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-cream to-transparent z-10 pointer-events-none"></div>
+          <div class="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-cream to-transparent z-10 pointer-events-none"></div>
+
+          <div class="flex gap-6 w-max animate-marquee">
+            <div class="flex gap-6 shrink-0">
+              @for (partner of partners; track partner.name) {
+                <div class="h-16 px-8 rounded-sm bg-white/40 border border-border/40 backdrop-blur-xs flex items-center justify-center text-forest-deep/60 hover:text-forest-deep hover:bg-white hover:border-gold/30 hover:shadow-sm transition-all duration-300 cursor-pointer shrink-0">
+                  @if (partner.logoType === 'emaar') {
+                    <svg class="h-6 w-auto text-current" viewBox="0 0 120 30" fill="currentColor">
+                      <path d="M10,22 C13,10 27,10 30,22 M12,18 C14,8 26,8 28,18 M15,14 C17,6 23,6 25,14" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                      <text x="38" y="22" font-family="'Montserrat', sans-serif" font-weight="700" font-size="13" letter-spacing="0.18em">EMAAR</text>
+                    </svg>
+                  } @else if (partner.logoType === 'nakheel') {
+                    <svg class="h-7 w-auto text-current" viewBox="0 0 130 30" fill="currentColor">
+                      <g transform="translate(5, 2)">
+                        <path d="M12,25 C12,15 8,10 5,6 C10,9 12,14 12,25" />
+                        <path d="M14,25 C14,15 18,10 21,6 C16,9 14,14 14,25" />
+                        <path d="M13,25 L13,2" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M13,10 C10,7 6,7 3,9 C8,6 11,8 13,10" />
+                        <path d="M13,10 C16,7 20,7 23,9 C18,6 15,8 13,10" />
+                      </g>
+                      <text x="36" y="21" font-family="'Montserrat', sans-serif" font-weight="600" font-size="12" letter-spacing="0.15em">NAKHEEL</text>
+                    </svg>
+                  } @else if (partner.logoType === 'dmcc') {
+                    <svg class="h-6 w-auto text-current" viewBox="0 0 110 30" fill="currentColor">
+                      <polygon points="5,15 12,5 19,15 12,25" opacity="0.8"/>
+                      <polygon points="16,15 21,7 26,15 21,23" opacity="0.6"/>
+                      <polygon points="23,15 26,10 29,15 26,20" opacity="0.4"/>
+                      <text x="36" y="21" font-family="'Poppins', sans-serif" font-weight="800" font-size="14" letter-spacing="0.08em">DMCC</text>
+                    </svg>
+                  } @else if (partner.logoType === 'dubai-municipality') {
+                    <svg class="h-8 w-auto text-current" viewBox="0 0 170 30" fill="currentColor">
+                      <g transform="translate(2, 0)">
+                        <circle cx="15" cy="15" r="13" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M9,16 C12,18 18,18 21,16 L20,18 C17,20 13,20 10,18 Z"/>
+                        <path d="M15,5 L15,16 C13,11 11,9 9,9 C12,10 14,13 15,16 C16,13 18,10 21,9 C19,9 17,11 15,16" />
+                      </g>
+                      <text x="36" y="16" font-family="'Montserrat', sans-serif" font-weight="600" font-size="10" letter-spacing="0.05em">DUBAI</text>
+                      <text x="36" y="25" font-family="'Montserrat', sans-serif" font-weight="500" font-size="8" letter-spacing="0.08em" opacity="0.8">MUNICIPALITY</text>
+                    </svg>
+                  } @else if (partner.logoType === 'anantara') {
+                    <svg class="h-7 w-auto text-current" viewBox="0 0 140 30" fill="currentColor">
+                      <g transform="translate(6, 2)">
+                        <path d="M12,2 C12,2 5,10 5,16 C5,20 8,23 12,23 C16,23 19,20 19,16 C19,10 12,2 12,2 Z M12,21 C9.8,21 8,19.2 8,17 C8,15 10,12 12,8 C14,12 16,15 16,17 C16,19.2 14.2,21 12,21 Z" />
+                      </g>
+                      <text x="38" y="20" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="15" letter-spacing="0.1em">ANANTARA</text>
+                    </svg>
+                  } @else if (partner.logoType === 'private-estates') {
+                    <svg class="h-7 w-auto text-current" viewBox="0 0 160 30" fill="currentColor">
+                      <g transform="translate(4, 2)">
+                        <path d="M5,18 L7,10 L12,14 L17,10 L19,18 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                        <circle cx="12" cy="7" r="1.5"/>
+                        <circle cx="6" cy="7.5" r="1"/>
+                        <circle cx="18" cy="7.5" r="1"/>
+                        <line x1="5" y1="21" x2="19" y2="21" stroke="currentColor" stroke-width="1.5"/>
+                      </g>
+                      <text x="32" y="16" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="12" letter-spacing="0.08em">PRIVATE</text>
+                      <text x="32" y="25" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="9" letter-spacing="0.12em" opacity="0.8">ESTATES</text>
+                    </svg>
+                  }
+                </div>
+              }
+            </div>
+            <div class="flex gap-6 shrink-0" aria-hidden="true">
+              @for (partner of partners; track 'dup-' + partner.name) {
+                <div class="h-16 px-8 rounded-sm bg-white/40 border border-border/40 backdrop-blur-xs flex items-center justify-center text-forest-deep/60 hover:text-forest-deep hover:bg-white hover:border-gold/30 hover:shadow-sm transition-all duration-300 cursor-pointer shrink-0">
+                  @if (partner.logoType === 'emaar') {
+                    <svg class="h-6 w-auto text-current" viewBox="0 0 120 30" fill="currentColor">
+                      <path d="M10,22 C13,10 27,10 30,22 M12,18 C14,8 26,8 28,18 M15,14 C17,6 23,6 25,14" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                      <text x="38" y="22" font-family="'Montserrat', sans-serif" font-weight="700" font-size="13" letter-spacing="0.18em">EMAAR</text>
+                    </svg>
+                  } @else if (partner.logoType === 'nakheel') {
+                    <svg class="h-7 w-auto text-current" viewBox="0 0 130 30" fill="currentColor">
+                      <g transform="translate(5, 2)">
+                        <path d="M12,25 C12,15 8,10 5,6 C10,9 12,14 12,25" />
+                        <path d="M14,25 C14,15 18,10 21,6 C16,9 14,14 14,25" />
+                        <path d="M13,25 L13,2" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M13,10 C10,7 6,7 3,9 C8,6 11,8 13,10" />
+                        <path d="M13,10 C16,7 20,7 23,9 C18,6 15,8 13,10" />
+                      </g>
+                      <text x="36" y="21" font-family="'Montserrat', sans-serif" font-weight="600" font-size="12" letter-spacing="0.15em">NAKHEEL</text>
+                    </svg>
+                  } @else if (partner.logoType === 'dmcc') {
+                    <svg class="h-6 w-auto text-current" viewBox="0 0 110 30" fill="currentColor">
+                      <polygon points="5,15 12,5 19,15 12,25" opacity="0.8"/>
+                      <polygon points="16,15 21,7 26,15 21,23" opacity="0.6"/>
+                      <polygon points="23,15 26,10 29,15 26,20" opacity="0.4"/>
+                      <text x="36" y="21" font-family="'Poppins', sans-serif" font-weight="800" font-size="14" letter-spacing="0.08em">DMCC</text>
+                    </svg>
+                  } @else if (partner.logoType === 'dubai-municipality') {
+                    <svg class="h-8 w-auto text-current" viewBox="0 0 170 30" fill="currentColor">
+                      <g transform="translate(2, 0)">
+                        <circle cx="15" cy="15" r="13" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M9,16 C12,18 18,18 21,16 L20,18 C17,20 13,20 10,18 Z"/>
+                        <path d="M15,5 L15,16 C13,11 11,9 9,9 C12,10 14,13 15,16 C16,13 18,10 21,9 C19,9 17,11 15,16" />
+                      </g>
+                      <text x="36" y="16" font-family="'Montserrat', sans-serif" font-weight="600" font-size="10" letter-spacing="0.05em">DUBAI</text>
+                      <text x="36" y="25" font-family="'Montserrat', sans-serif" font-weight="500" font-size="8" letter-spacing="0.08em" opacity="0.8">MUNICIPALITY</text>
+                    </svg>
+                  } @else if (partner.logoType === 'anantara') {
+                    <svg class="h-7 w-auto text-current" viewBox="0 0 140 30" fill="currentColor">
+                      <g transform="translate(6, 2)">
+                        <path d="M12,2 C12,2 5,10 5,16 C5,20 8,23 12,23 C16,23 19,20 19,16 C19,10 12,2 12,2 Z M12,21 C9.8,21 8,19.2 8,17 C8,15 10,12 12,8 C14,12 16,15 16,17 C16,19.2 14.2,21 12,21 Z" />
+                      </g>
+                      <text x="38" y="20" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="15" letter-spacing="0.1em">ANANTARA</text>
+                    </svg>
+                  } @else if (partner.logoType === 'private-estates') {
+                    <svg class="h-7 w-auto text-current" viewBox="0 0 160 30" fill="currentColor">
+                      <g transform="translate(4, 2)">
+                        <path d="M5,18 L7,10 L12,14 L17,10 L19,18 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                        <circle cx="12" cy="7" r="1.5"/>
+                        <circle cx="6" cy="7.5" r="1"/>
+                        <circle cx="18" cy="7.5" r="1"/>
+                        <line x1="5" y1="21" x2="19" y2="21" stroke="currentColor" stroke-width="1.5"/>
+                      </g>
+                      <text x="32" y="16" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="12" letter-spacing="0.08em">PRIVATE</text>
+                      <text x="32" y="25" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="9" letter-spacing="0.12em" opacity="0.8">ESTATES</text>
+                    </svg>
+                  }
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-display text-2xl text-forest-deep mb-4">Locations Served</h3>
+        <p class="text-muted-foreground leading-relaxed mb-6">
+          We have successfully delivered premium landscaping projects in elite communities across the UAE:
+        </p>
+        <div class="relative w-full overflow-hidden py-2">
+          <div class="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-cream to-transparent z-10 pointer-events-none"></div>
+          <div class="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-cream to-transparent z-10 pointer-events-none"></div>
+
+          <div class="flex gap-3 w-max animate-marquee">
+            <div class="flex gap-3 shrink-0">
+              @for (loc of locations; track loc) {
+                <div class="px-5 py-2.5 rounded-full bg-forest-deep/[0.04] text-forest-deep border border-forest/15 font-semibold text-xs tracking-wider uppercase hover:bg-forest-deep hover:text-cream hover:border-forest-deep transition-all duration-300 cursor-pointer">
+                  {{ loc }}
+                </div>
+              }
+            </div>
+            <div class="flex gap-3 shrink-0" aria-hidden="true">
+              @for (loc of locations; track loc) {
+                <div class="px-5 py-2.5 rounded-full bg-forest-deep/[0.04] text-forest-deep border border-forest/15 font-semibold text-xs tracking-wider uppercase hover:bg-forest-deep hover:text-cream hover:border-forest-deep transition-all duration-300 cursor-pointer">
+                  {{ loc }}
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

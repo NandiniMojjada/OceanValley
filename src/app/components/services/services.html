@@ -1,0 +1,89 @@
+<section id="services" class="py-24 sm:py-32 bg-cream">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-14">
+      <div class="max-w-2xl">
+        <p class="text-xs tracking-[0.4em] uppercase text-forest mb-4">Our Services</p>
+        <h2 class="font-display text-4xl sm:text-5xl text-forest-deep">A complete landscape practice, end to end.</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- Infinite Auto-scrolling Interactive Cards (Right to Left) -->
+  <div class="relative w-full overflow-hidden pb-8">
+    <div class="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-cream to-transparent z-10 pointer-events-none"></div>
+    <div class="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-cream to-transparent z-10 pointer-events-none"></div>
+
+    <div #scroller 
+         class="no-scrollbar overflow-x-auto cursor-grab active:cursor-grabbing select-none touch-pan-y" 
+         (scroll)="onScroll()"
+         (wheel)="onWheel()"
+         (pointerdown)="onPointerDown($event)"
+         (pointermove)="onPointerMove($event)"
+         (pointerup)="onPointerUp($event)"
+         (pointercancel)="onPointerUp($event)">
+      <div class="flex gap-6 px-6 pb-4 w-max">
+        <!-- Main Track -->
+        <div class="flex gap-6 shrink-0">
+          @for (service of services; track service.title; let i = $index) {
+            <article class="group shrink-0 w-[300px] sm:w-[340px] h-[420px] rounded-sm bg-background border border-border relative overflow-hidden hover:shadow-luxe transition-all duration-500 flex flex-col">
+              <!-- Rectangular Service Image -->
+              <div class="h-44 w-full overflow-hidden relative shrink-0 border-b border-border">
+                <img [src]="service.imagePath" [alt]="service.title" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
+              </div>
+              
+              <!-- Content Area -->
+              <div class="relative flex-1 p-6 flex flex-col justify-between overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-forest to-forest-deep opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div class="relative z-10 flex flex-col h-full justify-between">
+                  <div>
+                    <h3 class="font-display text-2xl text-forest-deep group-hover:text-cream transition-colors">{{ service.title }}</h3>
+                    <p class="mt-2 text-muted-foreground group-hover:text-cream/75 transition-colors leading-relaxed text-sm line-clamp-4">{{ service.desc }}</p>
+                  </div>
+                  
+                  <div class="mt-auto pt-4">
+                    <a href="#contact" class="inline-flex items-center gap-2 text-sm tracking-wide text-forest group-hover:text-gold transition-colors">
+                      Learn More
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          }
+        </div>
+
+        <!-- Duplicate Track for Seamless Loop -->
+        <div class="flex gap-6 shrink-0" aria-hidden="true">
+          @for (service of services; track 'dup-' + service.title; let i = $index) {
+            <article class="group shrink-0 w-[300px] sm:w-[340px] h-[420px] rounded-sm bg-background border border-border relative overflow-hidden hover:shadow-luxe transition-all duration-500 flex flex-col">
+              <!-- Rectangular Service Image -->
+              <div class="h-44 w-full overflow-hidden relative shrink-0 border-b border-border">
+                <img [src]="service.imagePath" [alt]="service.title" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
+              </div>
+              
+              <!-- Content Area -->
+              <div class="relative flex-1 p-6 flex flex-col justify-between overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-forest to-forest-deep opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div class="relative z-10 flex flex-col h-full justify-between">
+                  <div>
+                    <h3 class="font-display text-2xl text-forest-deep group-hover:text-cream transition-colors">{{ service.title }}</h3>
+                    <p class="mt-2 text-muted-foreground group-hover:text-cream/75 transition-colors leading-relaxed text-sm line-clamp-4">{{ service.desc }}</p>
+                  </div>
+                  
+                  <div class="mt-auto pt-4">
+                    <a href="#contact" class="inline-flex items-center gap-2 text-sm tracking-wide text-forest group-hover:text-gold transition-colors">
+                      Learn More
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,34 @@
+<section id="about" class="py-24 sm:py-32 bg-background">
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+    <!-- Image -->
+    <div class="relative">
+      <img src="about.jpg" alt="Aerial view of luxury Dubai villa with extensive landscaping" loading="lazy"
+        class="w-full rounded-sm shadow-luxe" />
+      <div class="absolute -bottom-8 -right-4 sm:-right-8 glass px-8 py-6 rounded-sm shadow-luxe max-w-xs">
+        <div class="font-display text-4xl gold-text">3+</div>
+        <div class="text-sm text-foreground/70 mt-1">Years of combined landscape expertise across the UAE</div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div>
+      <p class="text-xs tracking-[0.4em] uppercase text-forest mb-4">About Us</p>
+      <h2 class="font-display text-4xl sm:text-5xl text-forest-deep leading-tight">
+        Outdoor living, <em class="text-forest">composed</em> with precision.
+      </h2>
+      <div class="mt-10 space-y-8">
+        @for (block of blocks; track block.title) {
+        <div class="flex gap-5">
+          <div class="shrink-0 w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center">
+            <span class="w-2 h-2 rounded-full bg-gold"></span>
+          </div>
+          <div>
+            <h3 class="font-display text-xl text-forest-deep">{{ block.title }}</h3>
+            <p class="text-muted-foreground mt-2 leading-relaxed">{{ block.desc }}</p>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
