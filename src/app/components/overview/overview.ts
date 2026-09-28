@@ -6,12 +6,15 @@ import { Component } from '@angular/core';
 })
 export class OverviewComponent {
   partners = [
-    { name: 'Dubai Municipality', logoType: 'dubai-municipality' },
-    { name: 'Anantara Resorts', logoType: 'anantara' },
-    { name: 'EMAAR', logoType: 'emaar' },
-    { name: 'Nakheel', logoType: 'nakheel' },
-    { name: 'DMCC', logoType: 'dmcc' },
-    { name: 'Private Estates', logoType: 'private-estates' }
+    { name: 'Anantara Resorts', logo: 'anantara.png' },
+    { name: 'Water in Motion', logo: 'waterinmotion.png' },
+    { name: 'Stone & Slates', logo: 'stones-and-slates.png' },
+    { name: 'Marble Life', logo: 'marblelife.png' },
+    { name: 'GCL', logo: 'gcl.png' },
+    { name: 'Yas Mall', logo: 'yasmall.png' },
+    { name: 'Crown plaza Hotel', logo: 'crownplaza.png' },
+    { name: 'Jumeirah Ball-Room', logo: '' },
+    { name: 'Extra Stone', logo: '' },
   ];
 
   locations = [

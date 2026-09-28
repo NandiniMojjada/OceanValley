@@ -187,3 +187,53 @@
 /* Hide scrollbar for horizontal scroll */
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { scrollbar-width: none; }
+
+.partner-card {
+  height: 42px;
+  min-width: 145px;
+  padding: 0 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid color-mix(in oklab, var(--forest) 20%, transparent);
+  border-radius: 9999px;
+  overflow: hidden;
+  background: #ffffff;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.partner-card:hover {
+  background: var(--forest-deep);
+  border-color: var(--forest-deep);
+  box-shadow: 0 6px 18px color-mix(in oklab, var(--forest-deep) 25%, transparent);
+  transform: translateY(-1px);
+}
+
+.partner-card img {
+  max-height: 24px;
+  max-width: 110px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.partner-card:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.partner-card span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--forest-deep);
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.partner-card:hover span {
+  color: var(--cream);
+}

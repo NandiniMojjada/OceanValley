@@ -1,34 +1,35 @@
-<section id="about" class="py-24 sm:py-32 bg-background overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-    <!-- Image -->
-    <div class="relative">
-      <img src="about.jpg" alt="Aerial view of luxury Dubai villa with extensive landscaping" loading="lazy"
-        class="w-full rounded-sm shadow-luxe" />
-      <div class="absolute -bottom-8 -right-4 sm:-right-8 glass px-8 py-6 rounded-sm shadow-luxe max-w-xs">
-        <div class="font-display text-4xl gold-text">3+</div>
-        <div class="text-sm text-foreground/70 mt-1">Years of combined landscape expertise across the UAE</div>
-      </div>
+<section id="about" class="py-24 sm:py-32 bg-background relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <p class="text-xs tracking-[0.4em] uppercase text-forest mb-4">About Ocean Valley</p>
+      <h2 class="font-display text-4xl sm:text-5xl text-forest-deep">Crafting Dubai's Most Elegant & Luxury Outdoor Landscapes</h2>
     </div>
 
-    <!-- Content -->
-    <div>
-      <p class="text-xs tracking-[0.4em] uppercase text-forest mb-4">About Us</p>
-      <h2 class="font-display text-4xl sm:text-5xl text-forest-deep leading-tight">
-        Outdoor living, <em class="text-forest">composed</em> with precision.
-      </h2>
-      <div class="mt-10 space-y-8">
-        @for (block of blocks; track block.title) {
-        <div class="flex gap-5">
-          <div class="shrink-0 w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center">
-            <span class="w-2 h-2 rounded-full bg-gold"></span>
+    <div class="grid md:grid-cols-3 gap-8">
+      @for (block of blocks; track block.title; let i = $index) {
+        <div class="group relative bg-cream/60 rounded-xl p-8 border border-border/80 hover:border-forest/30 transition-all duration-500 hover:shadow-luxe hover:-translate-y-1 flex flex-col justify-between">
+          <div class="absolute top-6 right-6 font-display text-4xl font-bold text-forest/10 group-hover:text-gold/30 transition-colors">
+            0{{ i + 1 }}
           </div>
           <div>
-            <h3 class="font-display text-xl text-forest-deep">{{ block.title }}</h3>
-            <p class="text-muted-foreground mt-2 leading-relaxed">{{ block.desc }}</p>
+            <div class="w-12 h-12 rounded-full bg-forest/10 flex items-center justify-center mb-6 group-hover:bg-forest group-hover:text-cream transition-colors duration-300">
+              @if (i === 0) {
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-forest group-hover:text-gold transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              } @else if (i === 1) {
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-forest group-hover:text-gold transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              } @else {
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-forest group-hover:text-gold transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.29 7 12 12 20.71 7"/><line x1="12" y1="22" x2="12" y2="12"/></svg>
+              }
+            </div>
+            <h3 class="font-display text-2xl text-forest-deep mb-4 group-hover:text-forest transition-colors">{{ block.title }}</h3>
+            <p class="text-muted-foreground leading-relaxed text-sm sm:text-base">{{ block.desc }}</p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-border/40 flex items-center justify-between">
+            <span class="text-xs font-semibold tracking-wider uppercase text-forest/70 group-hover:text-gold transition-colors">Excellence in UAE</span>
+            <div class="w-2 h-2 rounded-full bg-gold opacity-0 group-hover:opacity-100 transition-opacity"></div>
           </div>
         </div>
-        }
-      </div>
+      }
     </div>
   </div>
 </section>

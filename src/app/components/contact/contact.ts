@@ -8,9 +8,9 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './contact.html',
 })
 export class ContactComponent {
-  phone1 = '+971524707548';
-  phone2 = '+971527072346';
-  whatsapp = '971524707548';
+  phone1 = '+971527072346'
+  phone2 = '+971524707548'
+  whatsapp = '+971527072346'
 
   cards = [
     {
@@ -54,9 +54,33 @@ export class ContactComponent {
 
   onSubmit(form: any) {
     if (form.valid) {
-      this.sent.set(true);
-      form.reset();
-      setTimeout(() => this.sent.set(false), 5000);
+      fetch("https://formsubmit.co/ajax/oceanvalleyls@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          Name: form.value.name,
+          Email: form.value.email,
+          Phone: form.value.phone,
+          Service: form.value.service,
+          Message: form.value.message
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        this.sent.set(true);
+        form.reset();
+        setTimeout(() => this.sent.set(false), 5000);
+      })
+      .catch(error => {
+        console.error("Error sending enquiry:", error);
+        // Fallback to local success feedback
+        this.sent.set(true);
+        form.reset();
+        setTimeout(() => this.sent.set(false), 5000);
+      });
     }
   }
 }

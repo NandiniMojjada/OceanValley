@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
   currentYear = new Date().getFullYear();
-  phone1 = '+971524707548';
-  phone2 = '+971527072346';
-  whatsapp = '971524707548';
+  phone1 = '+971527072346'
+  phone2 = '+971524707548'
+  whatsapp = '+971527072346'
 
   services = [
     'Gardens & Landscape Design',
