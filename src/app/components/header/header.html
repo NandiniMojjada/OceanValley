@@ -1,20 +1,21 @@
 <header [class]="'fixed top-0 inset-x-0 z-50 transition-all duration-500 ' +
-    (scrolled() ? 'bg-background/80 backdrop-blur-xl border-b border-border/60 py-3' : 'py-6 bg-transparent')">
-  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+    (scrolled() ? 'bg-background/95 backdrop-blur-xl border-b border-border/60 py-2 sm:py-3 shadow-sm' : 'py-3 sm:py-6 bg-transparent')">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between gap-2">
     <!-- Logo -->
-    <a href="#top" class="flex items-center gap-3 group">
-      <div class="w-20 h-20 rounded-full flex items-center justify-center overflow-hidden bg-transparent">
+    <a href="#top" class="flex items-center gap-2 sm:gap-3 group shrink-0 min-w-0">
+      <div class="w-10 h-10 sm:w-14 sm:h-14 lg:w-20 lg:h-20 rounded-full flex items-center justify-center overflow-hidden bg-transparent shrink-0">
         <img src="logo.png" alt="Ocean Valley Landscaping logo" class="w-full h-full object-contain" />
       </div>
-      <div class="leading-none">
-        <div class="font-bebas text-[50px] font-extrabold tracking-wide text-[#046330]">Ocean Valley</div>
-        <div class="font-bebas text-[25px] font-bold tracking-[0.05em] uppercase text-[#046330]">Landscaping L.L.C.
+      <div class="leading-none min-w-0">
+        <div [class]="'font-bebas text-xl sm:text-3xl lg:text-[50px] font-extrabold tracking-wide transition-colors truncate ' + (scrolled() ? 'text-[#046330]' : 'text-cream')">Ocean Valley</div>
+        <div [class]="'font-bebas text-[10px] sm:text-[14px] lg:text-[25px] font-bold tracking-[0.05em] uppercase transition-colors truncate ' + (scrolled() ? 'text-[#046330]' : 'text-gold-soft')">
+          Landscaping L.L.C.
         </div>
       </div>
     </a>
 
     <!-- Desktop Nav -->
-    <nav class="hidden lg:flex items-center gap-10">
+    <nav class="hidden lg:flex items-center gap-8 xl:gap-10">
       @for (link of links; track link.href) {
       <a [href]="link.href"
         [class]="'text-sm tracking-wide transition-colors ' + (scrolled() ? 'text-foreground/80 hover:text-foreground' : 'text-cream/80 hover:text-gold')">{{
@@ -32,7 +33,7 @@
     </nav>
 
     <!-- Mobile Menu Toggle -->
-    <button class="lg:hidden" [class]="scrolled() ? 'text-foreground' : 'text-cream'" (click)="toggleNav()"
+    <button class="lg:hidden p-2 rounded-md hover:bg-foreground/5 transition-colors shrink-0" [class]="scrolled() ? 'text-foreground' : 'text-cream'" (click)="toggleNav()"
       aria-label="Toggle menu">
       @if (navOpen()) {
       <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -53,16 +54,15 @@
 
   <!-- Mobile Menu Dropdown -->
   @if (navOpen()) {
-  <div class="lg:hidden absolute top-full inset-x-0 bg-background border-b border-border shadow-luxe">
-    <div class="px-6 py-6 flex flex-col gap-4">
+  <div class="lg:hidden absolute top-full inset-x-0 bg-background/95 backdrop-blur-2xl border-b border-border shadow-luxe transition-all animate-fade-up max-h-[85vh] overflow-y-auto">
+    <div class="px-5 py-6 flex flex-col gap-4">
       @for (link of links; track link.href) {
-      <a [href]="link.href" (click)="closeNav()" class="text-foreground/80 hover:text-foreground transition-colors">{{
+      <a [href]="link.href" (click)="closeNav()" class="text-foreground/90 hover:text-foreground text-base font-medium transition-colors py-1.5 border-b border-border/20">{{
         link.label }}</a>
       }
       <a href="#contact" (click)="closeNav()"
-        class="px-5 py-3 rounded-full bg-gold text-forest-deep text-center font-medium">
+        class="mt-2 px-5 py-3.5 rounded-full bg-gold text-forest-deep text-center font-medium shadow-gold text-base">
         Free Consultation
-
       </a>
     </div>
   </div>

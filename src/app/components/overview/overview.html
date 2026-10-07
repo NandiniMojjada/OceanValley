@@ -1,21 +1,21 @@
-<section class="py-24 sm:py-32 bg-cream">
-  <div class="max-w-5xl mx-auto px-6 text-center">
-    <div class="hairline w-24 mx-auto mb-8"></div>
-    <p class="text-xs tracking-[0.4em] uppercase text-forest mb-6">Our Mission</p>
-    <h2 class="font-display text-3xl sm:text-4xl text-forest-deep leading-relaxed max-w-4xl mx-auto">
+<section class="py-16 sm:py-24 lg:py-32 bg-cream overflow-hidden">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+    <div class="hairline w-20 sm:w-24 mx-auto mb-6 sm:mb-8"></div>
+    <p class="text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.4em] uppercase text-forest mb-4 sm:mb-6">Our Mission</p>
+    <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl text-forest-deep leading-relaxed max-w-4xl mx-auto px-2">
       “Our commitment is to be one of the leading companies in the field of landscaping and gardening, providing
       state-of-the-art services to our customers across the UAE, round the clock.”
     </h2>
 
-    <div class="mt-16 grid sm:grid-cols-2 gap-12 text-left max-w-4xl mx-auto">
-      <div class="min-w-0">
-        <h3 class="font-display text-2xl text-forest-deep mb-4">Key Partners</h3>
-        <p class="text-muted-foreground leading-relaxed mb-6">
+    <div class="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12 text-left max-w-4xl mx-auto">
+      <div class="min-w-0 w-full max-w-full overflow-hidden">
+        <h3 class="font-display text-xl sm:text-2xl text-forest-deep mb-3 sm:mb-4">Key Partners</h3>
+        <p class="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 sm:mb-6">
           We proudly partner with leading developers and hospitality brands across the region:
         </p>
-        <div class="relative w-full overflow-hidden py-2">
-          <div class="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-cream to-transparent z-10 pointer-events-none"></div>
-          <div class="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-cream to-transparent z-10 pointer-events-none"></div>
+        <div class="relative w-full max-w-full overflow-hidden py-2">
+          <div class="absolute inset-y-0 left-0 w-6 sm:w-8 bg-gradient-to-r from-cream to-transparent z-10 pointer-events-none"></div>
+          <div class="absolute inset-y-0 right-0 w-6 sm:w-8 bg-gradient-to-l from-cream to-transparent z-10 pointer-events-none"></div>
 
           <div class="flex gap-3 w-max animate-marquee">
             <div class="flex gap-3 shrink-0">
@@ -43,26 +43,26 @@
           </div>
         </div>
       </div>
-      <div class="min-w-0">
-        <h3 class="font-display text-2xl text-forest-deep mb-4">Locations Served</h3>
-        <p class="text-muted-foreground leading-relaxed mb-6">
+      <div class="min-w-0 w-full max-w-full overflow-hidden">
+        <h3 class="font-display text-xl sm:text-2xl text-forest-deep mb-3 sm:mb-4">Locations Served</h3>
+        <p class="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 sm:mb-6">
           We have successfully delivered premium landscaping projects in elite communities across the UAE:
         </p>
-        <div class="relative w-full overflow-hidden py-2">
-          <div class="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-cream to-transparent z-10 pointer-events-none"></div>
-          <div class="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-cream to-transparent z-10 pointer-events-none"></div>
+        <div class="relative w-full max-w-full overflow-hidden py-2">
+          <div class="absolute inset-y-0 left-0 w-6 sm:w-8 bg-gradient-to-r from-cream to-transparent z-10 pointer-events-none"></div>
+          <div class="absolute inset-y-0 right-0 w-6 sm:w-8 bg-gradient-to-l from-cream to-transparent z-10 pointer-events-none"></div>
 
           <div class="flex gap-3 w-max animate-marquee">
             <div class="flex gap-3 shrink-0">
               @for (loc of locations; track loc) {
-                <div class="px-5 py-2.5 rounded-full bg-forest-deep/[0.04] text-forest-deep border border-forest/15 font-semibold text-xs tracking-wider uppercase hover:bg-forest-deep hover:text-cream hover:border-forest-deep transition-all duration-300 cursor-pointer">
+                <div class="px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-forest-deep/[0.04] text-forest-deep border border-forest/15 font-semibold text-[10px] sm:text-xs tracking-wider uppercase hover:bg-forest-deep hover:text-cream hover:border-forest-deep transition-all duration-300 cursor-pointer">
                   {{ loc }}
                 </div>
               }
             </div>
             <div class="flex gap-3 shrink-0" aria-hidden="true">
               @for (loc of locations; track loc) {
-                <div class="px-5 py-2.5 rounded-full bg-forest-deep/[0.04] text-forest-deep border border-forest/15 font-semibold text-xs tracking-wider uppercase hover:bg-forest-deep hover:text-cream hover:border-forest-deep transition-all duration-300 cursor-pointer">
+                <div class="px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-forest-deep/[0.04] text-forest-deep border border-forest/15 font-semibold text-[10px] sm:text-xs tracking-wider uppercase hover:bg-forest-deep hover:text-cream hover:border-forest-deep transition-all duration-300 cursor-pointer">
                   {{ loc }}
                 </div>
               }
