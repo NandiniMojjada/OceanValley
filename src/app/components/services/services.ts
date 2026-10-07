@@ -84,17 +84,22 @@ export class ServicesComponent implements AfterViewInit, OnDestroy {
   }
 
   onPointerDown(event: PointerEvent) {
-    // Only handle primary button (left click) or touch
-    if (event.button !== 0 && event.pointerType === 'mouse') return;
+    // Only capture pointer for mouse drag on desktop
+    if (event.pointerType === 'mouse') {
+      if (event.button !== 0) return;
+      const el = this.scroller.nativeElement;
+      this.isUserInteracting = true;
+      this.isDragging = true;
+      this.startX = event.pageX - el.offsetLeft;
+      this.scrollLeftStart = el.scrollLeft;
 
-    const el = this.scroller.nativeElement;
-    this.isUserInteracting = true;
-    this.isDragging = true;
-    this.startX = event.pageX - el.offsetLeft;
-    this.scrollLeftStart = el.scrollLeft;
-
-    // Set pointer capture to track pointer movement even outside the element boundaries
-    el.setPointerCapture(event.pointerId);
+      try {
+        el.setPointerCapture(event.pointerId);
+      } catch (e) {}
+    } else {
+      // For mobile touch, pause auto-scroll during touch interaction while allowing native smooth panning
+      this.isUserInteracting = true;
+    }
 
     if (this.interactionTimeout) {
       clearTimeout(this.interactionTimeout);
@@ -102,26 +107,23 @@ export class ServicesComponent implements AfterViewInit, OnDestroy {
   }
 
   onPointerMove(event: PointerEvent) {
-    if (!this.isDragging) return;
+    if (event.pointerType !== 'mouse' || !this.isDragging) return;
 
     const el = this.scroller.nativeElement;
     const x = event.pageX - el.offsetLeft;
-    const walk = (x - this.startX) * 1.5; // Scroll speed multiplier
+    const walk = (x - this.startX) * 1.5;
     el.scrollLeft = this.scrollLeftStart - walk;
   }
 
   onPointerUp(event: PointerEvent) {
-    if (!this.isDragging) return;
-    this.isDragging = false;
-
-    const el = this.scroller.nativeElement;
-    try {
-      el.releasePointerCapture(event.pointerId);
-    } catch (e) {
-      // Ignored if capture already released or invalid
+    if (event.pointerType === 'mouse' && this.isDragging) {
+      this.isDragging = false;
+      const el = this.scroller.nativeElement;
+      try {
+        el.releasePointerCapture(event.pointerId);
+      } catch (e) {}
     }
 
-    // Resume auto-scroll after a short delay (e.g. 1.5s) to allow viewing
     this.interactionTimeout = setTimeout(() => {
       this.isUserInteracting = false;
     }, 1500);

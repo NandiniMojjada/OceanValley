@@ -1,24 +1,24 @@
-<footer class="bg-forest-deep text-cream/80 pt-20 pb-8">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="grid md:grid-cols-4 gap-12 mb-16">
-      <div class="md:col-span-2">
-        <div class="flex items-center gap-4 mb-6">
-          <div class="w-14 h-14 rounded-full bg-cream flex items-center justify-center overflow-hidden shadow-gold">
+<footer class="bg-forest-deep text-cream/80 pt-12 sm:pt-20 pb-6 sm:pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-12 sm:mb-16">
+      <div class="sm:col-span-2">
+        <div class="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+          <div class="w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-cream flex items-center justify-center overflow-hidden shadow-gold shrink-0">
             <img src="logo.png" alt="Ocean Valley Landscaping logo" class="w-full h-full object-contain" />
           </div>
           <div>
-            <div class="font-display text-xl text-cream">Ocean Valley Landscaping</div>
-            <div class="text-xs tracking-[0.25em] uppercase text-gold/80">L.L.C. · Dubai, UAE</div>
+            <div class="font-display text-lg sm:text-xl text-cream font-medium">Ocean Valley Landscaping</div>
+            <div class="text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.25em] uppercase text-gold/80">L.L.C. · Dubai, UAE</div>
           </div>
         </div>
-        <p class="text-cream/60 max-w-md leading-relaxed">
+        <p class="text-xs sm:text-sm text-cream/60 max-w-md leading-relaxed">
           Crafting exceptional outdoor living spaces across Dubai and the
           United Arab Emirates — design, build and care.
         </p>
       </div>
       <div>
-        <h4 class="font-display text-cream text-lg mb-5">Services</h4>
-        <ul class="space-y-2 text-sm">
+        <h4 class="font-display text-cream text-base sm:text-lg mb-3 sm:mb-5 font-medium">Services</h4>
+        <ul class="space-y-2 text-xs sm:text-sm">
           @for (service of services; track service) {
           <li>
             <a href="#services" class="hover:text-gold transition-colors">{{ service }}</a>
@@ -27,10 +27,10 @@
         </ul>
       </div>
       <div>
-        <h4 class="font-display text-cream text-lg mb-5">Contact</h4>
-        <ul class="space-y-3 text-sm">
+        <h4 class="font-display text-cream text-base sm:text-lg mb-3 sm:mb-5 font-medium">Contact</h4>
+        <ul class="space-y-2.5 sm:space-y-3 text-xs sm:text-sm">
           <li class="flex items-start gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mt-0.5 text-gold" viewBox="0 0 24 24" fill="none"
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mt-0.5 text-gold shrink-0" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2">
               <path
                 d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -38,7 +38,7 @@
             <a [href]="'tel:' + phone1" class="hover:text-gold">{{ phone1 }}</a>
           </li>
           <li class="flex items-start gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mt-0.5 text-gold" viewBox="0 0 24 24" fill="none"
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mt-0.5 text-gold shrink-0" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2">
               <path
                 d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -46,7 +46,7 @@
             <a [href]="'tel:' + phone2" class="hover:text-gold">{{ phone2 }}</a>
           </li>
           <li class="flex items-start gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mt-0.5 text-gold" viewBox="0 0 24 24" fill="none"
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mt-0.5 text-gold shrink-0" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2">
               <rect width="20" height="16" x="2" y="4" rx="2" />
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
@@ -54,16 +54,15 @@
             <a href="mailto:oceanvalleyls@gmail.com" class="hover:text-gold break-all">oceanvalleyls@gmail.com</a>
           </li>
           <li class="flex items-start gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mt-0.5 text-gold" viewBox="0 0 24 24" fill="none"
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mt-0.5 text-gold shrink-0" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2">
               <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
               <circle cx="12" cy="10" r="3" />
             </svg>
-            <a href="https://maps.google.com/?q=Dubai+UAE" class="hover:text-gold break-all">Dubai, United Arab
-              Emirates</a>
+            <a href="https://maps.google.com/?q=Dubai+UAE" class="hover:text-gold">Dubai, United Arab Emirates</a>
           </li>
         </ul>
-        <div class="flex gap-3 mt-6">
+        <div class="flex gap-3 mt-5 sm:mt-6">
           <a href="https://www.linkedin.com/company/ocean-valley-landscaping-llc" target="_blank" rel="noreferrer"
             aria-label="LinkedIn"
             class="w-9 h-9 rounded-full border border-cream/20 flex items-center justify-center hover:bg-gold hover:text-forest-deep hover:border-gold transition-all">
@@ -86,7 +85,7 @@
       </div>
     </div>
     <div class="hairline mb-6"></div>
-    <div class="flex flex-col sm:flex-row justify-between gap-4 text-xs text-cream/50">
+    <div class="flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] sm:text-xs text-cream/50 text-center sm:text-left">
       <p>© {{ currentYear }} Ocean Valley Landscaping L.L.C. All rights reserved.</p>
       <p class="tracking-[0.2em] uppercase">Crafted in Dubai</p>
     </div>
