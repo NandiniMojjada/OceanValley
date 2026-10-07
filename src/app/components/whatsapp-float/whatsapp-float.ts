@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './whatsapp-float.html',
 })
 export class WhatsAppFloatComponent {
-  whatsapp = '971524707548';
+  whatsapp = '971527072346';
 }
